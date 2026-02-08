@@ -1,51 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Firebase App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <section id="auth-section" class="container">
-        <h1>Welcome App</h1>
-        <div class="form-group">
-            <input type="email" id="email" placeholder="Email">
-            <input type="password" id="password" placeholder="Password">
-            <button onclick="loginEmail()" class="btn-primary">Login / Sign Up</button>
-        </div>
-        <hr>
-        <button onclick="loginGoogle()" class="btn-google">Login with Google</button>
-    </section>
-
-    <section id="main-app" class="container" style="display: none;">
-        <nav class="tabs">
-            <button onclick="showPage('home')">Home</button>
-            <button onclick="showPage('invite')">Invite</button>
-            <button onclick="showPage('profile')">Profile</button>
-        </nav>
-
+<section id="main-app" style="display: none;">
+    
+    <div class="content">
         <div id="home" class="page">
-            <h2>🏠 Home Dashboard</h2>
-            <p>Aapka swagat hai!</p>
+            <h2>🏠 Home</h2>
+            <p>Main Dashboard content yahan aayega.</p>
         </div>
 
         <div id="invite" class="page" style="display:none;">
-            <h2>🤝 Invite Friends</h2>
-            <p>Share code: <strong>MYAPP2024</strong></p>
-            <button class="btn-primary">Copy Link</button>
+            <h2>🤝 Invite</h2>
+            <p>Apne doston ko invite karein.</p>
         </div>
 
         <div id="profile" class="page" style="display:none;">
-            <h2>👤 My Profile</h2>
+            <h2>👤 Profile</h2>
             <p id="user-email"></p>
             <button onclick="logout()" class="btn-danger">Logout</button>
         </div>
-    </section>
+    </div>
 
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+    <nav class="bottom-nav">
+        <button onclick="showPage('home')" class="nav-item">
+            <span>🏠</span>
+            <small>Home</small>
+        </button>
+        <button onclick="showPage('invite')" class="nav-item">
+            <span>🎁</span>
+            <small>Invite</small>
+        </button>
+        <button onclick="showPage('profile')" class="nav-item">
+            <span>👤</span>
+            <small>Profile</small>
+        </button>
+    </nav>
+</section> 
