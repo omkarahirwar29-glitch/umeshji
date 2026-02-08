@@ -45,5 +45,20 @@ auth.onAuthStateChanged(user => {
 // Tab Switching Logic
 function showPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
-    document.getElementById(pageId).style.display = 'block';
+    document.getElementById(pageId).style.display = 'block';function showPage(pageId) {
+    // 1. Sabhi pages (Home, Invite, Profile) ko dhundo aur chhupa do
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(p => {
+        p.style.display = 'none';
+    });
+    
+    // 2. Sirf us page ko dikhao jiski ID humne pass ki hai
+    const activePage = document.getElementById(pageId);
+    if (activePage) {
+        activePage.style.display = 'block';
+    }
+    
+    // 3. Page ko top par le jao (Smooth feel ke liye)
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 }
